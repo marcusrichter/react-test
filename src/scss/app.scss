@@ -1,0 +1,46 @@
+@import "fonts";
+@import "colors";
+@import "header";
+@import "elements/_hamburger-menu";
+
+body {
+    background-color: $background-color;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+section {
+    color: $text-color;    
+}
+
+.top-fixed {
+    position: fixed !important;    
+    top: 0;    
+    right: 0;    
+    left: 0;    
+    z-index: 1030;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+.text-montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+}
+
+.link {
+    font-family: 'Trocchi', serif;
+    font-size: 0.9em;
+    color: #444;
+
+    &::before {
+        color: '#0000cc';
+        content: "→";
+        margin-right: 10px;
+    }    
+
+    &:hover {
+        text-decoration: none;
+        color: red;
+    }
+}
