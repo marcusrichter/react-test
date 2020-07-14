@@ -3,14 +3,16 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/app.scss';
-import Header from './pageComponents/Header';
-
+import Header from './pageElements/Header';
+import SideNav from './pageElements/SideNav';
+import PageContext from "./contexts/PageContext";
 
 function App() {
+  const [sideMenuActivated, setSideMenuActivated] = useState<boolean>(false);
 
-
-  return <> 
+  return <PageContext.Provider value={{sideMenuActivated, setSideMenuActivated}}> 
     <Header></Header>
+    <SideNav></SideNav>
 
     <div className="album py-5 bg-light">
         <div className="container">
@@ -180,7 +182,7 @@ function App() {
         <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
       </div>
     </footer>
-    </>;
+    </PageContext.Provider>;
 }
 
 export default App;
