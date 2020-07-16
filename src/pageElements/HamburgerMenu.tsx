@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
+import PageContext from "./../contexts/PageContext";
 
 interface Props {
     onClick?: string;
@@ -7,14 +8,16 @@ interface Props {
 type Button = Props & React.HTMLProps<HTMLButtonElement> & React.HTMLAttributes<HTMLButtonElement>;
 const Button = (params: any) => <button {...params}></button>
 
-const toggleMenu = (isActivated: boolean, setActivated: any) => {
+const toggleMenu = (isActivated: any, setActivated: any) => {
     setActivated(!isActivated)
 };
 
 export default () => {
-    const [isActivated, setActivated] = useState(false);
+    const {sideMenuActivated, setSideMenuActivated} = React.useContext(PageContext);
 
-    return <Button onClick={() => toggleMenu(isActivated, setActivated)} className={clsx('navbar-toggler', !isActivated && 'collapsed')}
+    return <Button 
+        onClick={() => toggleMenu(sideMenuActivated, setSideMenuActivated)} 
+        className={clsx('navbar-toggler', !sideMenuActivated && 'collapsed')}
         type="button"
         data-toggle="collapse"
         data-target="#navbarsExampleDefault"

@@ -14,6 +14,12 @@ function App() {
     <Header></Header>
     <SideNav></SideNav>
 
+    <div className="container d-flex jumbo-teaser">
+      <div className="row justify-content-center align-self-center">
+      centered
+      </div>    
+    </div>
+
     <div className="album py-5 bg-light">
         <div className="container">
 
