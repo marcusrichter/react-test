@@ -1,3 +1,22 @@
 .jumbo-teaser {
-    height: 400px;
+
+    background:    
+        linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+        ),
+        url(//picsum.photos/1000/800);
+
+    background-size: cover;        
+
+    color: white;    
+
+    [class^='col-'] {
+        min-height: 100vh;
+    }
+
+    h2 {
+        font-size: 40px;            
+        font-weight: bold;
+    }    
 }

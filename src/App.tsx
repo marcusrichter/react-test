@@ -13,10 +13,13 @@ function App() {
   return <PageContext.Provider value={{sideMenuActivated, setSideMenuActivated}}> 
     <Header></Header>
     <SideNav></SideNav>
-
-    <div className="container d-flex jumbo-teaser">
-      <div className="row justify-content-center align-self-center">
-      centered
+    <div className="container-fluid jumbo-teaser">
+      <div className="row justify-content-center">
+        <div className="col-12 d-flex">
+          <div className="mx-auto my-auto">
+            <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
+          </div>
+        </div>      
       </div>    
     </div>
 
