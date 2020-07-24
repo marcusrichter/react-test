@@ -1,0 +1,33 @@
+.navbar {    
+    .dropdown-menu {
+        min-width: 22rem !important;
+        padding: 20px 50px;
+        &.show {            
+            animation: dropdown-menu-show-animation 0.3s ease-out;
+            -webkit-animation: dropdown-menu-show-animation 0.3s ease-out;
+        }
+
+        li {
+            a {
+                font-size: 20px !important;
+                line-height: 35px;
+                text-transform: none;
+            }            
+        }
+    }
+}
+
+@keyframes dropdown-menu-show-animation {
+    0% {
+        opacity: 0.7; 
+        transform-origin: 0 0;
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+    }
+    100% {
+        opacity: 1.0; 
+        transform-origin: 0 0;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
