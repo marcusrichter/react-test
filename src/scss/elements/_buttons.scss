@@ -3,6 +3,16 @@
     font-size: 20px !important;
     padding: 10px 40px !important;
 
+    &.btn-grey-outlined {
+      border: 1px solid $yp-grey-color;
+      color: $yp-grey-color;
+    }
+
+    &.btn-white-outlined {
+      border: 1px solid white;
+      color: white;
+    }
+
     &.btn-yellow-filled {
       background-color: $yp-primary-color;          
       color:black;

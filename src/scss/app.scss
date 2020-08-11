@@ -1,11 +1,13 @@
 @import "fonts";
 @import "colors";
-@import "header";
+@import "elements/_header";
 @import "elements/_buttons";
 @import "elements/_jumbo-teaser";
+@import "elements/_grey-container";
 @import "elements/_hamburger-menu";
 @import "elements/_navbar";
 @import "elements/_side_nav";
+@import "elements/text-card";
 
 
 body {

@@ -23,7 +23,7 @@ export default () => {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-right d-none d-l-flex d-xl-flex">
             <li className="navbar-nav dropdown">
-              <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"
+              <a href="#" className="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"
               onMouseEnter={() => setSubmenuActivated('menu1')}
               onMouseLeave={() => setSubmenuActivated(null)}
               >Menu 1</a>

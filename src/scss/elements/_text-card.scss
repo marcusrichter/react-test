@@ -1,0 +1,22 @@
+.text-card {
+    &.card {
+        border: 0;
+    }
+    .card-body {
+        text-align: center;
+    }
+    .card-link {
+        margin-top: 20px;
+    }
+    .card-subtitle {
+        text-align: center;
+        font-size: 12px;
+    }
+    .card-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .card-title {
+        text-align: center;
+    }    
+}

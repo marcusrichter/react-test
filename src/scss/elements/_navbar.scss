@@ -15,6 +15,36 @@
             }            
         }
     }
+
+    .navbar-nav {
+        font-family: 'Open Sans', sans-serif !important;
+
+        .nav-link {
+            font-size: 16px !important;
+
+            &:after {
+                background-color: #888!important;
+                display: block;
+                content: "";
+                height: 2px;
+                width: 0%!important;
+                left: 50%!important;
+                top: 4px;
+                position: relative;
+                -webkit-transition: width .3s ease-in-out!important;
+                -moz--transition: width .3s ease-in-out!important;
+                transition: width .3s ease-in-out!important;
+                -webkit-transform: translateX(-50%)!important;
+                -moz-transform: translateX(-50%)!important;
+                transform: translateX(-50%)!important;
+            }
+            &:hover {
+                &:after {
+                    width: 100%!important;
+                }
+            }
+        }        
+    }
 }
 
 @keyframes dropdown-menu-show-animation {

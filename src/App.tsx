@@ -6,6 +6,8 @@ import './scss/app.scss';
 import Header from './pageElements/Header';
 import SideNav from './pageElements/SideNav';
 import PageContext from "./contexts/PageContext";
+import JumboTeaser from './pageElements/JumboTeaser';
+import GreyContainer from './pageElements/GreyContainer';
 
 function App() {
   const [sideMenuActivated, setSideMenuActivated] = useState<boolean>(false);
@@ -13,16 +15,8 @@ function App() {
   return <PageContext.Provider value={{sideMenuActivated, setSideMenuActivated}}> 
     <Header></Header>
     <SideNav></SideNav>
-    <div className="container-fluid jumbo-teaser">
-      <div className="row justify-content-center">
-        <div className="col-12 d-flex">
-          <div className="mx-auto my-auto text-center">
-            <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
-            <button type="button" className="btn btn-yellow-filled mt-4">Primary</button>
-          </div>
-        </div>      
-      </div>    
-    </div>
+    <JumboTeaser></JumboTeaser>
+    <GreyContainer></GreyContainer>
 
     <div className="album py-5 bg-light">
         <div className="container">
