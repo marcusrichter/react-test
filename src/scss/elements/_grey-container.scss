@@ -1,13 +1,16 @@
 .grey-container {
     background-color: $yp-dark-grey-color;
     color: white;
-    min-height: 100vh;
 
-    .grey-card {
+    .grey-card {        
         background-color: $yp-dark-grey-color;
 
         .card-text {
             color: $yp-grey-color;             
+        }
+
+        .MuiSvgIcon-root {
+            font-size: 40px;
         }
     }
 }
