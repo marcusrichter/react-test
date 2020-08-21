@@ -1,5 +1,6 @@
 import React from 'react';
 import DirectionsBus from '@material-ui/icons/DirectionsBus';
+import Button from './Buttons/Button';
 
 export default (props: any) => <div className="card col-sm-12 col-md-12 col-lg-3 mb-3 grey-card text-card">
     <div className="card-body">
@@ -8,7 +9,8 @@ export default (props: any) => <div className="card col-sm-12 col-md-12 col-lg-3
         <p className="card-text">
             {props.children}
         </p>
-        <a href="#" className="card-link btn btn-white-outlined">Card link</a>                
+        <Button slideRight="true" type="whiteOutlined" className="mt-5">
+            assss
+        </Button>
     </div>
 </div>;
-
