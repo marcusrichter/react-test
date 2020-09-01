@@ -1,14 +1,4 @@
-.jumbo-teaser {
-
-    background:    
-        linear-gradient(
-        rgba(0, 0, 0, 0.4), 
-        rgba(0, 0, 0, 0.4)
-        ),
-        url(//picsum.photos/1000/800);
-
-    background-size: cover;        
-
+.jumbo-teaser {    
     color: white;    
 
     [class^='col-'] {

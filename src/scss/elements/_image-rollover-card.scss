@@ -1,0 +1,49 @@
+.image-rollover-card {
+    background-color: $yp-dark-grey-color !important;
+    border: 0;
+    cursor: pointer;
+    padding: 0 0 !important;
+
+    img {
+        filter: grayscale(100%); 
+    }
+
+    &:hover {        
+        .rollover-layer {
+            height: 100%;
+            a {
+                opacity: 1;
+            }            
+        }
+    }
+
+    .card-title,
+    a {
+        color: $yp-primary-color;
+    }
+
+    .card-text {
+        color: $yp-grey-color;
+    }
+
+    .MuiSvgIcon-root {
+        font-size: 40px;
+    }
+
+    .rollover-layer {        
+        background-color: $yp-dark-grey-color !important;
+        bottom: 0;        
+        overflow: hidden;
+        left: 0;
+        position: absolute;        
+        right: 0;    
+        height: 0;  
+        transition: 0.5s ease;      
+        width: 100%;        
+        
+        a {
+            transition: opacity 0.5s ease-in-out 0.5s;
+            opacity: 0;
+        }
+    }
+}
