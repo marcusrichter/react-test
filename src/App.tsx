@@ -10,6 +10,7 @@ import SideNav from './pageElements/SideNav';
 import PageContext from "./contexts/PageContext";
 import { Route, Switch } from 'react-router-dom';
 import Home from "./pages/Home";
+import LayoutTestOne from './pages/LayoutTests/LayoutTestOne';
 
 function App() {
   const [sideMenuActivated, setSideMenuActivated] = useState<boolean>(false);
@@ -24,6 +25,7 @@ function App() {
     <SideNav></SideNav>
     <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/layouts/layout1" component={LayoutTestOne} exact />
     </Switch>
 
     <footer className="text-muted">

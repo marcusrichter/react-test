@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './../img/logo.svg';
 import clsx from 'clsx';
 import HamburgerMenu from './HamburgerMenu';
+import { Link } from "react-router-dom";
 
 export default () => {
     const [headerMinimized, setHeaderMinimized] = useState(false);
@@ -16,7 +17,7 @@ export default () => {
     });
 
     return <header className={clsx(headerMinimized && 'downsize', !headerMinimized && 'standard')}>
-      <nav className="navbar navbar-expand">
+      <nav className="navbar navbar-expand" onMouseLeave={() => setSubmenuActivated(null)}>
         <a className="navbar-brand" href="#">
           <img src={logo}></img>
         </a>
@@ -24,11 +25,12 @@ export default () => {
           <ul className="navbar-nav ml-right d-none d-l-flex d-xl-flex">
             <li className="navbar-nav dropdown">
               <a href="#" className="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"
-              onMouseEnter={() => setSubmenuActivated('menu1')}
-              onMouseLeave={() => setSubmenuActivated(null)}
-              >Menu 1</a>
+              onMouseEnter={() => setSubmenuActivated('menu1')}        
+              >Layout Tests</a>
               <ul className={clsx('dropdown-menu', subMenuActivated === 'menu1' && 'show')}>
-                <li className="text-center"><a href="#">Lorem ipsum dolor</a></li>
+                <li className="text-center">
+                  <Link to="/layouts/layout1">Layout Test 1</Link>
+                </li>
                 <li className="text-center"><a href="#">justo duo dolores</a></li>
                 <li className="text-center"><a href="#">takimata sanctus est</a></li>
                 <li className="text-center"><a href="#">sit amet</a></li>

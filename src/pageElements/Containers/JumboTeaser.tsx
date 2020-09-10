@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default (props: any) => {
     const styles = { 
         background: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${props.backgroundImage})`,
