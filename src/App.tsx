@@ -11,6 +11,7 @@ import PageContext from "./contexts/PageContext";
 import { Route, Switch } from 'react-router-dom';
 import Home from "./pages/Home";
 import LayoutTestOne from './pages/LayoutTests/LayoutTestOne';
+import FormularPage from './pages/Interactive/FormularPage';
 
 function App() {
   const [sideMenuActivated, setSideMenuActivated] = useState<boolean>(false);
@@ -26,6 +27,7 @@ function App() {
     <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/layouts/layout1" component={LayoutTestOne} exact />
+        <Route path="/interactive/formular" component={FormularPage} exact />
     </Switch>
 
     <footer className="text-muted">
