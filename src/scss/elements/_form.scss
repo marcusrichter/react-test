@@ -1,0 +1,65 @@
+.grey-container {
+    .MuiFormLabel-root,
+    .MuiFormControlLabel-label,
+   .MuiInputLabel-formControl {
+       color: $yp-grey-color;
+
+       .Mui-focused {
+        color: white !important;
+       }
+    }
+
+    .MuiInput-underline {
+        &::before {            
+            border-bottom: 2px solid white;
+        }
+
+        &::after {            
+            border-bottom: 2px solid $yp-primary-color;
+        }
+    }    
+
+    .MuiInputLabel-root {
+        font-size: 1.3rem;
+    }
+
+    .MuiFormLabel-root {
+        color: $yp-grey-color;
+    }
+
+    .MuiFormHelperText-root {
+        color: $yp-grey-color;
+    }
+
+    .Mui-focused {
+        color:$yp-primary-color !important;
+    }
+
+    .MuiInputBase-input {
+        color: white;        
+    }
+
+    .MuiFormHelperText-root {
+
+    }
+
+
+}
+
+form {
+    font-size: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+
+    .MuiInputBase-input {
+        font-size: 1.5rem;
+    }
+
+    .MuiTextField-root {     
+        margin-bottom: 2rem;
+    }
+
+    .MuiFormControl-root {
+        margin-bottom: 2rem;
+    }
+}
