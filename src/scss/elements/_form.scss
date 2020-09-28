@@ -1,4 +1,8 @@
 .grey-container {
+    form {
+        color: $yp-grey-color;        
+    }
+
     .MuiFormLabel-root,
     .MuiFormControlLabel-label,
    .MuiInputLabel-formControl {
@@ -11,11 +15,15 @@
 
     .MuiInput-underline {
         &::before {            
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid $yp-grey-color;
         }
 
         &::after {            
-            border-bottom: 2px solid $yp-primary-color;
+            border-bottom: 2px solid $yp-primary-color;            
+        }
+
+        &:hover::before {            
+                border-bottom: 2px solid $yp-grey-color;
         }
     }    
 
@@ -38,6 +46,10 @@
     .MuiInputBase-input {
         color: white;        
     }
+    
+    .MuiSvgIcon-root {
+        fill: $yp-grey-color;
+    }
 
     .MuiFormHelperText-root {
 
@@ -47,7 +59,7 @@
 }
 
 form {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     max-width: 800px;
     width: 100%;
 

@@ -19,10 +19,27 @@ export default () => {
                     <h3 className="mb-4" data-aos="fade-left" data-aos-duration="1000">sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</h3>
                 </div>
             </div>
-            <div className="row mt-5 mb-5"></div>
-            <div className="row">
+            <div className="row mt-3 mb-3"></div>
+            <div className="row mb-5">
                 <div className="col-12 d-flex justify-content-center">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+                        <div className="d-flex justify-content-between">
+                            <div className="contact-form-gender">
+                                <FormControl>
+                                    <FormLabel component="legend">Gender</FormLabel>
+                                    <RadioGroup aria-label="Gender" name="gender">
+                                        <FormControlLabel value="female" control={<Radio />} label="Female" />
+                                        <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                    </RadioGroup>
+                                </FormControl>
+                            </div>
+                            <div className="d-flex flex-column contact-form-address">
+                                <span className="font-weight-bold mb-2">Lorem Ipsum AG</span>
+                                <span>Neustrasse 1</span>
+                                <span>5000 Köln</span>
+                                <span>0221/500000</span>
+                            </div>
+                        </div>
                         <TextField label="Vorname" type="text" name="firstname" data-validators="isRequired,isAlpha" fullWidth={true}/>
                         <TextField label="Nachname" type="text" name="lastname" data-validators="isRequired,isAlpha" fullWidth={true}/>
                         <TextField label="EMail" type="text" name="email" data-validators="isRequired,isAlpha" fullWidth={true}/>
@@ -38,34 +55,20 @@ export default () => {
                         </FormControl>
 
                         <fieldset>
-                            <FormControl fullWidth={true}>
-                                {/* form label is required here to perform default validations */}
-                                <FormLabel component="legend">I love React material UI form</FormLabel>
+                            <FormControl fullWidth={true}>                                
                                 <FormGroup>
-                                    <FormControlLabel control={<Checkbox value='yes' />}
-                                        label='I love React material UI form' />
+                                    <FormControlLabel control={<Checkbox value='yes' />}label='Datenschutzhinweise bestätigen' />
                                 </FormGroup>
                             </FormControl>
-
-
-                        </fieldset>
-
-                        <FormControl>
-                            <FormLabel component="legend">Gender</FormLabel>
-                            <RadioGroup aria-label="Gender" name="gender" value="male">
-                                <FormControlLabel value="female" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male" control={<Radio />} label="Male" />
-                            </RadioGroup>
-                        </FormControl>
+                        </fieldset>    
 
                         <br></br>
 
-                        <Button variant="raised" type="reset">Reset</Button>
-                        <Button variant="raised" type="submit">Submit</Button>
+                        <Button variant="raised" type="reset">Senden</Button>
                     </form>
                 </div>
-
             </div>
+            <div className="row mt-3 mb-3"></div>
         </GreyContainer>
     </>
 };
