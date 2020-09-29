@@ -3,6 +3,8 @@ import GreyContainer from './../../pageElements/Containers/GreyContainer';
 import { useForm } from 'react-hook-form';
 import { FormControl, FormControlLabel, FormGroup, FormLabel, InputLabel, MenuItem, Select, TextField, Checkbox, FormHelperText, RadioGroup, Radio } from '@material-ui/core';
 import Button from '../../pageElements/Buttons/Button';
+import WhiteContainerSmall from '../../pageElements/Containers/WhiteContainerSmall';
+import NumberingCard from './../../pageElements/Cards/NumberingCard';
 
 export default () => {
     const { register, handleSubmit, errors } = useForm();
@@ -70,5 +72,30 @@ export default () => {
             </div>
             <div className="row mt-3 mb-3"></div>
         </GreyContainer>
+        <WhiteContainerSmall>
+            <div className="row mb-5 mt-5">
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>   
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>
+                <NumberingCard number={1} title="Eingabe">
+                    xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                </NumberingCard>     
+            </div>    
+        </WhiteContainerSmall>
     </>
 };
