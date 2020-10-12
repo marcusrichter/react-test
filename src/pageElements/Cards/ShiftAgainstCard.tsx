@@ -12,7 +12,7 @@ export default (props: any) => {
 
             <div className="col-12 col-md-6 col-lg-4 offset-lg-0" data-aos="fade-up" data-aos-duration="1500">
                 <h4>{title}</h4>
-                <h2>{subTitle}</h2>
+                <h3>{subTitle}</h3>
                 <p>{children}</p>
             </div>
         </div>
