@@ -17,6 +17,12 @@ export default () => {
 
     const onSubmit = (data: any) => {        
         setEntries([...entries, data]);
+        scroller.scrollTo('myScrollToElement', {
+            duration: 1500,
+            delay: 100,
+            smooth: true,            
+            offset: 50, 
+          });
     };
 
     return <>
@@ -51,7 +57,7 @@ export default () => {
                         <TextField label="Vorname" type="text" name="firstname" data-validators="isRequired,isAlpha" fullWidth={true} inputRef={register}/>
                         <TextField label="Nachname" type="text" name="lastname" data-validators="isRequired,isAlpha" fullWidth={true} inputRef={register}/>
                         <TextField label="EMail" type="text" name="email" data-validators="isRequired,isAlpha" fullWidth={true} inputRef={register}/>
-                        <FormControl required  fullWidth={true}>
+                        <FormControl required fullWidth={true}>
                             <InputLabel>Alter</InputLabel>
                             <ReactHookFormSelect name="age" control={control}>
                                 <MenuItem value=""><em>Bitte das Alter auswählen ...</em></MenuItem>
@@ -67,7 +73,7 @@ export default () => {
                                 <FormGroup>
                                     <FormControlLabel control={<Checkbox value='yes' />}label='Datenschutzhinweise bestätigen' />
                                 </FormGroup>
-                            </FormControl>
+                            </FormControl>                            
                         </fieldset>  
                         <br></br>
 
@@ -85,15 +91,30 @@ export default () => {
                 </div>
             </div>
         </LightGreyContainer>
-        <WhiteContainerSmall>
+        {entries.length > 0 && <WhiteContainerSmall>
             <Element name="myScrollToElement"></Element>
             <div className="row mb-5 mt-5">
-                {entries.map(entry =>
-                    <NumberingCard number={1} title="Eingabe">
-                        xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx
+                {entries.map((entry, index) =>
+                    <NumberingCard number={(index + 1)} title="Eingabe">
+                        <p>
+                            <label className="font-weight-bold">first name:</label> {entry.firstname}
+                        </p>
+                        <p>
+                            <label className="font-weight-bold">last name:</label> {entry.lastname}
+                        </p>
+                        <p>
+                            <label className="font-weight-bold">email:</label> {entry.email}
+                        </p>
+                        <p>
+                            <label className="font-weight-bold">age:</label> {entry.age}
+                        </p>
+                        <p>
+                            <label className="font-weight-bold">gender:</label> {entry.gender}
+                        </p>
+
                     </NumberingCard>     
                 )}          
             </div>    
-        </WhiteContainerSmall>
+        </WhiteContainerSmall>}
     </>
 };

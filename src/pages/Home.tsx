@@ -5,6 +5,16 @@ import WhiteContainerSmall from './../pageElements/Containers/WhiteContainerSmal
 import TextCard from './../pageElements/Cards/TextCard';
 import ImageRolloverCard from './../pageElements/Cards/ImageRolloverCard';
 import Button from './../pageElements/Buttons/Button';
+import { Element, scroller } from 'react-scroll';
+
+const scrollForMore = () => {
+  scroller.scrollTo('moreScrollToElement', {
+    duration: 1500,
+    delay: 100,
+    smooth: true,            
+    offset: -100, 
+  });
+};
 
 export default () =>  <>
 <JumboTeaser backgroundImage="//picsum.photos/id/213/1000/800">
@@ -12,24 +22,26 @@ export default () =>  <>
   <div className="mx-auto my-auto text-center">
     <h2 className="mb-4" data-aos="fade-down" data-aos-duration="1000">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</h2>
     <h3 className="mb-4" data-aos="fade-left" data-aos-duration="1000">sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</h3>
-    <Button type="yellowFilled" className="mt-4" onClick={() => alert('x')}>
-        XMehr anzeigen
+    <Button type="yellowFilled" className="mt-4" onClick={() => scrollForMore()}>
+        Mehr anzeigen
     </Button>            
   </div>
 </div>  
 </JumboTeaser>
+
 <GreyContainer>
-<div className="row justify-content-around pt-5">  
-  <TextCard title="Titel Alpha" subTitle="Thema A" buttonText="mehr">
-      Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  </TextCard>
-  <TextCard title="Titel Beta" subTitle="Thema B" buttonText="mehr">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  </TextCard>
-  <TextCard title="Titel Gamma" subTitle="Sonstiges" buttonText="mehr">
-      Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-  </TextCard>
- </div> 
+  <Element name="moreScrollToElement"></Element>
+  <div className="row justify-content-around pt-5">  
+    <TextCard title="Titel Alpha" subTitle="Thema A" buttonText="mehr">
+        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </TextCard>
+    <TextCard title="Titel Beta" subTitle="Thema B" buttonText="mehr">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </TextCard>
+    <TextCard title="Titel Gamma" subTitle="Sonstiges" buttonText="mehr">
+        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    </TextCard>
+  </div> 
 </GreyContainer>
 
 <WhiteContainerSmall>

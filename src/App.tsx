@@ -31,12 +31,27 @@ function App() {
     </Switch>
 
     <footer className="text-muted">
-      <div className="container">
-        <p className="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+      <div className="container pt-4 pb-4">
+        <div className="row centered-vertical">
+          <div className="col-12 col-md-3 col-lg-2">
+            <h4>Kontakt</h4>
+          </div>
+
+          <div className="col-12 col-md-9 col-lg-3 phone-contact">
+            <p>0 221 / 500888</p>
+            <p><a href="mailto:post@xy.de">post@xy.de</a></p>
+          </div>
+
+          <div className="col-12 col-lg-7 meta-nav">
+            <ul>
+              <li><a href="#">Impressum</a></li>
+              <li><a href="#">Haftungsausschluss</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Blog</a></li>
+              <li>&copy; Lorem Ipsum</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
     </PageContext.Provider>;

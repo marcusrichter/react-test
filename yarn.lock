@@ -1695,6 +1695,13 @@
     "@types/history" "*"
     "@types/react" "*"
 
+"@types/react-scroll@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@types/react-scroll/-/react-scroll-1.8.1.tgz#b1ab6da288a66badfa1767f09d0ccb37bcb97c23"
+  integrity sha512-Ock34nSp4zOj/L0aAqZxi17GnCvm1ZC+yUvWGAVdcTH0ayZyEoEhBH3kteqiS76b7Ts6GNAGsPVlevgysgDHOA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.0.tgz#882839db465df1320e4753e6e9f70ca7e9b4d46d"

@@ -1,0 +1,21 @@
+footer {
+    .phone-contact {
+        a {
+            color: black;
+            font-size: 1.5rem;    
+        }
+    }
+
+    ul {
+        li {
+            display: inline-block;
+            margin-right: 1.5rem;
+
+            a {
+                color: black;
+                font-size: 1.2rem;
+                text-decoration: underline;
+            }
+        }
+    }
+}

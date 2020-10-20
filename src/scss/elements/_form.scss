@@ -15,15 +15,19 @@
 
     .MuiInput-underline {
         &::before {            
-            border-bottom: 2px solid $yp-grey-color;
+            border-bottom: 2px solid $yp-grey-color !important;
         }
 
         &::after {            
-            border-bottom: 2px solid $yp-primary-color;            
+            border-bottom: 2px solid $yp-primary-color !important;
         }
 
         &:hover::before {            
-                border-bottom: 2px solid $yp-grey-color;
+            border-bottom: 2px solid $yp-grey-color !important;
+        }
+
+        &:hover::after {            
+            border-bottom: 2px solid $yp-grey-color !important;
         }
     }    
 
