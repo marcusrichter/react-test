@@ -1,0 +1,26 @@
+.page-widget {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;    
+    transition: transform .5s;
+
+    >div {
+        padding: 5px;
+        
+        >div {
+            cursor: pointer;
+            background-color: rgba(.5, .5, .5, .5);
+            padding: 10px;
+
+            >svg {                
+                display: block;
+                color: white;
+                font-size: 30px;                
+            }
+        }        
+    }
+
+    &.page-widget-collapsed {
+        transform: translateX(70px);
+    }
+}

@@ -12,6 +12,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from "./pages/Home";
 import LayoutTestOne from './pages/LayoutTests/LayoutTestOne';
 import FormularPage from './pages/Interactive/FormularPage';
+import PageWidget from './pageElements/Widgets/PageWidget';
 
 function App() {
   const [sideMenuActivated, setSideMenuActivated] = useState<boolean>(false);
@@ -54,6 +55,7 @@ function App() {
         </div>
       </div>
     </footer>
+    <PageWidget></PageWidget>
     </PageContext.Provider>;
 }
 
