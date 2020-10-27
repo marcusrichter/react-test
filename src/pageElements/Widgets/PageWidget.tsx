@@ -5,15 +5,17 @@ import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
 import useScrollPosition from '@react-hook/window-scroll';
 import clsx from 'clsx';
 import { animateScroll } from 'react-scroll';
+import PageContext from "./../../contexts/PageContext";
 
 const scrollToTop = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 	animateScroll.scrollToTop();
 };
 
-export default () => {
+export default () => {	
 	const scrollY = useScrollPosition(60);
-	const collapsed = scrollY < 10;	
-
+	const {sideMenuActivated} = React.useContext(PageContext);
+	const collapsed = scrollY < 10 || sideMenuActivated;	
+	
 	return <div className={clsx('d-flex',  'page-widget', collapsed && 'page-widget-collapsed')}>
 		<div>
 			<div>

@@ -29,9 +29,11 @@ export default () => {
               >Layout Tests</a>
               <ul className={clsx('dropdown-menu', subMenuActivated === 'menu1' && 'show')}>
                 <li className="text-center">
-                  <Link to="/layouts/layout1">Layout Test 1</Link>
+                  <Link to="/layouts/shifted-cards">Shifted Cards</Link>
                 </li>
-                <li className="text-center"><a href="#">justo duo dolores</a></li>
+                <li className="text-center">
+                  <Link to="/layouts/parallax">Parallax</Link>
+                </li>                
                 <li className="text-center"><a href="#">takimata sanctus est</a></li>
                 <li className="text-center"><a href="#">sit amet</a></li>
                 <li className="text-center"><a href="#">sanctus est</a></li>

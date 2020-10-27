@@ -1,5 +1,5 @@
 import React from 'react';
-import WhiteContainerSmall from './../../pageElements/Containers/WhiteContainerSmall';
+import WhiteContainerSmall from '../../pageElements/Containers/WhiteContainerSmall';
 import ShiftAgainstCard from '../../pageElements/Cards/ShiftAgainstCard';
 
 export default () => <>
