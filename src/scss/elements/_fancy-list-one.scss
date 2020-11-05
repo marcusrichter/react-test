@@ -1,0 +1,33 @@
+.fancy-list-one {
+    list-style: none;
+    width: 600px;
+    max-width: 90%;
+
+    li {
+        display: block;
+        clear: both;
+        counter-increment: list;
+        padding-bottom: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.375;
+        position: relative;    
+
+        &::before {
+            font-size: 3rem;
+            content: counter(list);
+            width: 5rem;
+            height: 5rem;
+            float: left;
+            margin: 0 1.5rem 0.75rem 0;
+            color: #fff;
+            background: $yp-primary-color linear-gradient(to bottom right, $yp-grey-color 10%, $yp-dark-grey-color);
+            text-shadow: 0 0 2px 2px;
+            border-radius: 0 8px 8px 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            shape-outside: ellipse();
+            z-index: 1;            
+        }
+    }
+}
