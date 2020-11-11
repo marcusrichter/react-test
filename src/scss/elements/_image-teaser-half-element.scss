@@ -1,0 +1,11 @@
+.image-teaser-half-element {
+  width: 100%;
+  height: $half-element-height;
+
+  > div {
+    &:nth-of-type(1) {
+      color: black;
+      font-size: 2rem;
+    }
+  }
+}
