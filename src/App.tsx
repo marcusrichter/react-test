@@ -12,6 +12,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from "./pages/Home";
 import ShiftedCardsPage from './pages/LayoutTests/ShiftedCardsPage';
 import ParallaxPage from './pages/LayoutTests/ParallaxPage';
+import ScrollingBackgroundColorPage from './pages/LayoutTests/ScrollingBackgroundColorPage';
 import FormularPage from './pages/Interactive/FormularPage';
 import PageWidget from './pageElements/Widgets/PageWidget';
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/layouts/shifted-cards" component={ShiftedCardsPage} exact />
         <Route path="/layouts/parallax" component={ParallaxPage} exact />
+        <Route path="/layouts/scrolling-background-color-page" component={ScrollingBackgroundColorPage} exact />
         <Route path="/interactive/formular" component={FormularPage} exact />
     </Switch>
 
