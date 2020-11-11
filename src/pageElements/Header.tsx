@@ -35,7 +35,7 @@ export default () => {
                   <Link to="/layouts/parallax">Parallax</Link>
                 </li>                
                 <li className="text-center">
-                  <Link to="/layouts/scrolling-background-color-page">Scrolling Background Color Page</Link>
+                  <Link to="/layouts/scrolling-background-color-page">Scrolling BG Color</Link>
                 </li>     
                 <li className="text-center"><a href="#">sit amet</a></li>
                 <li className="text-center"><a href="#">sanctus est</a></li>

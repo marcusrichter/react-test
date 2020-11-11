@@ -1,5 +1,6 @@
 @import "fonts";
 @import "colors";
+@import "sizes";
 @import "elements/_header";
 @import "elements/_buttons";
 @import "elements/_jumbo-teaser";
@@ -18,6 +19,7 @@
 @import "elements/page-widget";
 @import "elements/fancy-list-one";
 @import "common/headlines";
+@import "elements/text-teaser-half-element";
 
 body {
     background-color: $background-color;

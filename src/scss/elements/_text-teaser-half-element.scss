@@ -1,0 +1,16 @@
+.text-teaser-half-element {
+  background-color: $yp-grey-color;
+  width: 100%;
+  height: $half-element-height;
+
+  > div {
+    &:nth-of-type(1) {
+      color: white;
+      font-size: 4rem;
+    }
+    &:nth-of-type(2) {
+      color: white;
+      font-size: 8rem;
+    }
+  }
+}
