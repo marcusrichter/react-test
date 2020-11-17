@@ -37,8 +37,9 @@ export default () => {
                 <li className="text-center">
                   <Link to="/layouts/scrolling-background-color-page">Scrolling BG Color</Link>
                 </li>     
-                <li className="text-center"><a href="#">sit amet</a></li>
-                <li className="text-center"><a href="#">sanctus est</a></li>
+                <li className="text-center">
+                  <Link to="/layouts/timeline-page">Timeline</Link>
+                </li>                    
               </ul>
             </li>
             <li className="navbar-nav dropdown">

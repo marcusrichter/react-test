@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import ShiftedCardsPage from './pages/LayoutTests/ShiftedCardsPage';
 import ParallaxPage from './pages/LayoutTests/ParallaxPage';
 import ScrollingBackgroundColorPage from './pages/LayoutTests/ScrollingBackgroundColorPage';
+import TimelinePage from './pages/LayoutTests/TimelinePage';
 import FormularPage from './pages/Interactive/FormularPage';
 import PageWidget from './pageElements/Widgets/PageWidget';
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/layouts/shifted-cards" component={ShiftedCardsPage} exact />
         <Route path="/layouts/parallax" component={ParallaxPage} exact />
         <Route path="/layouts/scrolling-background-color-page" component={ScrollingBackgroundColorPage} exact />
+        <Route path="/layouts/timeline-page" component={TimelinePage} exact />
         <Route path="/interactive/formular" component={FormularPage} exact />
     </Switch>
 
