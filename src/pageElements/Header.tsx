@@ -57,10 +57,10 @@ export default () => {
               </ul>
             </li>
             <li className="navbar-nav">
-              <a href="#" className="nav-link">Users</a>
+              <a href="#" className="nav-link">Test</a>
             </li>
             <li className="navbar-nav">
-              <a href="#" className="nav-link">Users</a>
+              <a href="#" className="nav-link">Test</a>
             </li>
           </ul>
 
