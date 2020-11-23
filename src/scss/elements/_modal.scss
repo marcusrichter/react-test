@@ -1,0 +1,10 @@
+.react-responsive-modal-modal {
+  background: $yp-dark-grey-color !important;
+  color: white !important;
+
+  .react-responsive-modal-closeButton {
+    svg {
+      fill: white;
+    }
+  }
+}

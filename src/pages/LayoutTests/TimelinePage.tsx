@@ -9,6 +9,8 @@ import Phone from '@material-ui/icons/Phone';
 import Colors from '../../constants/Colors';
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import {ModalImageData} from "../../pageElements/Modals/Data/ModalImageData";
+import ModalImage from "../../pageElements/Modals/ModalImage";
 
 const scrollForMore = () => {
     scroller.scrollTo('moreScrollToElement', {
@@ -20,7 +22,7 @@ const scrollForMore = () => {
 };
 
 export default () => {
-    const [modalImage, setModalImage] = useState<string|null>(null);
+    const [modalImage, setModalImage] = useState<ModalImageData|null>(null);
 
     return <>
         <JumboTeaser backgroundImage="//picsum.photos/1000/1600">
@@ -35,14 +37,7 @@ export default () => {
             </div>
         </JumboTeaser>
 
-        <Modal open={modalImage !== null} onClose={() => setModalImage(null)}>
-            <h2>Simple centered modal</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                hendrerit risus, sed porttitor quam.
-            </p>
-        </Modal>
+        <ModalImage data={modalImage} onClose={() => setModalImage(null)}></ModalImage>
 
         <WhiteContainerSmall className="pt-5 pb-5">
             <Element name="moreScrollToElement"></Element>
@@ -59,7 +54,9 @@ export default () => {
                         <p>
                             consetetur sadipscing elitr
                         </p>
-                        <div className="vertical-timeline-image-container" onClick={() => setModalImage('x')}>
+                        <div className="vertical-timeline-image-container" onClick={() => setModalImage(
+                            new ModalImageData('//picsum.photos/600/400', 'Eintrag 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'))
+                        }>
                             <img src="//picsum.photos/600/400"/>
                         </div>
                     </VerticalTimelineElement>
@@ -74,6 +71,11 @@ export default () => {
                         <p>
                             consetetur sadipscing elitr
                         </p>
+                        <div className="vertical-timeline-image-container" onClick={() => setModalImage(
+                            new ModalImageData('//picsum.photos/600/400', 'Eintrag 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'))
+                        }>
+                            <img src="//picsum.photos/600/300"/>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -86,6 +88,11 @@ export default () => {
                         <p>
                             consetetur sadipscing elitr
                         </p>
+                        <div className="vertical-timeline-image-container" onClick={() => setModalImage(
+                            new ModalImageData('//picsum.photos/600/400', 'Eintrag 3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'))
+                        }>
+                            <img src="//picsum.photos/700/400"/>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
