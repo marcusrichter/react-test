@@ -50,10 +50,11 @@ export default () => {
                 <li className="text-center">
                   <Link to="/interactive/formular">Formular</Link>
                 </li>
-                <li className="text-center"><a href="#">justo duo dolores</a></li>
-                <li className="text-center"><a href="#">takimata sanctus est</a></li>
-                <li className="text-center"><a href="#">sit amet</a></li>
-                <li className="text-center"><a href="#">sanctus est</a></li>
+                <li className="text-center">
+                  <Link to="/interactive/route-planner">Routen Planner</Link>
+                </li>
+                <li className="text-center"><a href="#">todo</a></li>
+                <li className="text-center"><a href="#">todo</a></li>
               </ul>
             </li>
             <li className="navbar-nav">

@@ -16,6 +16,7 @@ import ScrollingBackgroundColorPage from './pages/LayoutTests/ScrollingBackgroun
 import TimelinePage from './pages/LayoutTests/TimelinePage';
 import FormularPage from './pages/Interactive/FormularPage';
 import PageWidget from './pageElements/Widgets/PageWidget';
+import RoutePlannerPage from "./pages/Interactive/RoutePlannerPage";
 
 function App() {
   const [sideMenuActivated, setSideMenuActivated] = useState<boolean>(false);
@@ -35,6 +36,7 @@ function App() {
         <Route path="/layouts/scrolling-background-color-page" component={ScrollingBackgroundColorPage} exact />
         <Route path="/layouts/timeline-page" component={TimelinePage} exact />
         <Route path="/interactive/formular" component={FormularPage} exact />
+      <Route path="/interactive/route-planner" component={RoutePlannerPage} exact />
     </Switch>
 
     <footer className="text-muted">
