@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import GreyContainer from "../../pageElements/Containers/GreyContainer";
+import WhiteContainerSmall from "../../pageElements/Containers/WhiteContainerSmall";
+import Map from '../../pageElements/Geo/Map';
 
 export default () => {
+
     return <>
         <GreyContainer>
             <div className="row">
@@ -18,5 +21,10 @@ export default () => {
             </div>
             <div className="row pt-3 pb-3"></div>
         </GreyContainer>
+        <WhiteContainerSmall>
+            <div className="row">
+                <Map/>
+            </div>
+        </WhiteContainerSmall>
     </>
 };
