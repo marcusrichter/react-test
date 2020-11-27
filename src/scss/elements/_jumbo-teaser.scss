@@ -1,8 +1,10 @@
 .jumbo-teaser {    
     color: white;    
 
-    [class^='col-'] {
-        min-height: 100vh;
+    >div {
+        >div {
+            min-height: 100vh;
+        }
     }
 
     h2 {

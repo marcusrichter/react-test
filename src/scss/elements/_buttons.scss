@@ -18,6 +18,15 @@
       color: black;   
     }
 
+    &.btn-grey-filled {
+      background-color: $yp-grey-color;
+      color: white;
+
+      &:hover {
+        color: black !important;
+      }
+    }
+
     &:hover {
       color: white !important;
     }
