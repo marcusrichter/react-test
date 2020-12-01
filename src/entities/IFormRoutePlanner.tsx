@@ -1,5 +1,3 @@
-import React from "react";
-
 interface IFormRoutePlanner {
     fromStreet: string;
     fromCity: string;
@@ -9,4 +7,3 @@ interface IFormRoutePlanner {
 }
 
 export default IFormRoutePlanner;
-

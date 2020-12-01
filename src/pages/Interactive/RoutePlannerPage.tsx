@@ -6,11 +6,24 @@ import {useForm} from "react-hook-form";
 import {Element, scroller} from "react-scroll";
 import {TextField} from "@material-ui/core";
 import Button from "../../pageElements/Buttons/Button";
+import IFormRoutePlanner from "../../entities/IFormRoutePlanner";
+import geocodeService from "../../services/geo/GeocodeService";
+import georouteService from "../../services/geo/GeorouteService";
+import GeoLocation from "../../entities/IGeocoding";
 
 export default () => {
     const { register, handleSubmit, errors, control } = useForm();
 
-    const onSubmit = (data: any) => {
+    const onSubmit = async(data: any) => {
+        const dataRoutePlanner = data as IFormRoutePlanner;
+
+        const geocodeFrom = await geocodeService.geoCode(`${dataRoutePlanner.fromStreet} ${dataRoutePlanner.fromCity}`);
+        const geocodeTo = await geocodeService.geoCode(`${dataRoutePlanner.toStreet} ${dataRoutePlanner.toCity}`);
+
+        georouteService.findRoute(geocodeFrom as GeoLocation, geocodeTo as GeoLocation);
+
+        console.info(geocodeFrom);
+
         scroller.scrollTo('mapScrollToElement', {
             duration: 1500,
             delay: 100,
@@ -31,11 +44,10 @@ export default () => {
                             <div className="col-md-4 col-md-push-1" data-aos="fade-left">
                                 <div className="search-box">
                                     <div className="tab">
-
                                         <div className="tab-content">
                                             <div className="tab-content-inner active" data-content="signup">
                                                 <h3>Start und Ziel</h3>
-                                                <form name="route" method="post">
+                                                <form onSubmit={handleSubmit(onSubmit)}>
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
                                                             <label htmlFor="route_fromStreet" className="required">Start Strasse</label>
@@ -84,13 +96,11 @@ export default () => {
                                                     </div>
                                                 </form>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
