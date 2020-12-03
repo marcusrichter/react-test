@@ -9,7 +9,7 @@ import Button from "../../pageElements/Buttons/Button";
 import IFormRoutePlanner from "../../entities/IFormRoutePlanner";
 import geocodeService from "../../services/geo/GeocodeService";
 import georouteService from "../../services/geo/GeorouteService";
-import GeoLocation from "../../entities/IGeocoding";
+import GeoLocation from "../../entities/GeoLocation";
 
 export default () => {
     const { register, handleSubmit, errors, control } = useForm();
