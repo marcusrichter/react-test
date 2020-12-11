@@ -1,18 +1,19 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import WhiteContainerSmall from "../../pageElements/Containers/WhiteContainerSmall";
 import Map from '../../pageElements/Geo/Map';
 import JumboTeaser from "../../pageElements/Containers/JumboTeaser";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import {Element, scroller} from "react-scroll";
-import {TextField} from "@material-ui/core";
-import Button from "../../pageElements/Buttons/Button";
 import IFormRoutePlanner from "../../entities/IFormRoutePlanner";
 import geocodeService from "../../services/geo/GeocodeService";
 import georouteService from "../../services/geo/GeorouteService";
 import GeoLocation from "../../entities/GeoLocation";
+import Route from "../../entities/Route";
 
 export default () => {
     const { register, handleSubmit, errors, control } = useForm();
+
+    const [route, setRoute] = useState<Route|null>(null);
 
     const onSubmit = async(data: any) => {
         const dataRoutePlanner = data as IFormRoutePlanner;
@@ -20,9 +21,9 @@ export default () => {
         const geocodeFrom = await geocodeService.geoCode(`${dataRoutePlanner.fromStreet} ${dataRoutePlanner.fromCity}`);
         const geocodeTo = await geocodeService.geoCode(`${dataRoutePlanner.toStreet} ${dataRoutePlanner.toCity}`);
 
-        georouteService.findRoute(geocodeFrom as GeoLocation, geocodeTo as GeoLocation);
-
-        console.info(geocodeFrom);
+        const newRoute = await georouteService.findRoute(geocodeFrom as GeoLocation, geocodeTo as GeoLocation);
+        console.info(route);
+        setRoute(newRoute);
 
         scroller.scrollTo('mapScrollToElement', {
             duration: 1500,
@@ -106,9 +107,9 @@ export default () => {
             </div>
         </JumboTeaser>
         <WhiteContainerSmall>
-            <Element name="mapScrollToElement"></Element>
+            <Element name="mapScrollToElement"/>
             <div className="row">
-                <Map/>
+                <Map route={route}/>
             </div>
         </WhiteContainerSmall>
     </>
