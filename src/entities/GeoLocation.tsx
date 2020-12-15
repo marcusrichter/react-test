@@ -7,8 +7,12 @@ class GeoLocation {
         this.lon = lon;
     }
 
-    toString() {
+    toString(): string {
         return `${this.lon},${this.lat}`;
+    }
+
+    toArray(): Array<number> {
+        return [this.lon, this.lat];
     }
 }
 

@@ -8,7 +8,7 @@ class GeocodeService {
         const url = `https://us1.locationiq.com/v1/search.php?key=${Api.LOCATION_IQ_ACCESS_TOKEN}&q=${location}&format=json`;
 
         const result = await axios.get(url);
-        if (result.data && result.data.length > 0) {
+        if (result.data?.length) {
             return new GeoLocation(result.data[0].lon, result.data[0].lat);
         }
 

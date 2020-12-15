@@ -22,7 +22,7 @@ export default () => {
         const geocodeTo = await geocodeService.geoCode(`${dataRoutePlanner.toStreet} ${dataRoutePlanner.toCity}`);
 
         const newRoute = await georouteService.findRoute(geocodeFrom as GeoLocation, geocodeTo as GeoLocation);
-        console.info(route);
+        console.info(newRoute);
         setRoute(newRoute);
 
         scroller.scrollTo('mapScrollToElement', {
