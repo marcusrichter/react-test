@@ -1,7 +1,15 @@
+.map-container {
+  margin-top: 1rem;
+  border-bottom: 3px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-right: 3px solid #ccc;
+  border-left: 2px solid #ccc;
+  padding: 1rem;
+}
+
 .ol-map {
   min-width: 600px;
   min-height: 500px;
-  margin: 50px;
   height: 500px;
   width: '100%';
 }

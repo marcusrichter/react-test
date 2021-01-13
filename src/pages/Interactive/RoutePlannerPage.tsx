@@ -9,11 +9,34 @@ import geocodeService from "../../services/geo/GeocodeService";
 import georouteService from "../../services/geo/GeorouteService";
 import GeoLocation from "../../entities/GeoLocation";
 import Route from "../../entities/Route";
+import TextCard from "../../pageElements/Cards/TextCard";
+import GreyContainer from "../../pageElements/Containers/GreyContainer";
+import DirectionsBus from "@material-ui/icons/DirectionsBus";
+import CountUp from "react-countup";
+
+let inited = false;
 
 export default () => {
     const { register, handleSubmit, errors, control } = useForm();
 
     const [route, setRoute] = useState<Route|null>(null);
+
+    useEffect(() => {
+        const init = async () => {
+
+            const geocodeFrom = await geocodeService.geoCode(`Neusser Strassse Köln`);
+            const geocodeTo = await geocodeService.geoCode(`Aachener Strasse Frechen`);
+
+            const newRoute = await georouteService.findRoute(geocodeFrom as GeoLocation, geocodeTo as GeoLocation);
+            console.info(newRoute);
+            setRoute(newRoute);
+        }
+
+        if (!inited) {
+            init();
+            inited = true;
+        }
+    });
 
     const onSubmit = async(data: any) => {
         const dataRoutePlanner = data as IFormRoutePlanner;
@@ -106,10 +129,51 @@ export default () => {
                 </div>
             </div>
         </JumboTeaser>
-        <WhiteContainerSmall>
+        <GreyContainer>
             <Element name="mapScrollToElement"/>
             <div className="row">
-                <Map route={route}/>
+                <div className="mx-auto text-center">
+                    <h2 className="mb-4 mt-5">Es wurde eine Route gefunden</h2>
+                </div>
+            </div>
+            <div className="row d-flex justify-content-center pt-5 pb-5">
+                <div className="mr-4 ml-4 facts-counter">
+                    <h5 data-aos="fade-left" className="text-muted">
+                        XSSDDS<DirectionsBus/>
+                    </h5>
+                    <CountUp start={0} end={100} delay={0} >
+                        {({ countUpRef }) => (
+                            <h6 ref={countUpRef}/>
+                        )}
+                    </CountUp>
+                </div>
+                <div className="mr-4 ml-4 facts-counter">
+                    <h5 data-aos="fade-left"  className="text-muted">
+                        XSSDDS<DirectionsBus/>
+                    </h5>
+                    <CountUp start={0} end={100} delay={0} >
+                        {({ countUpRef }) => (
+                            <h6 ref={countUpRef}/>
+                        )}
+                    </CountUp>
+                </div>
+                <div className="mr-4 ml-4 facts-counter">
+                    <h5 data-aos="fade-left" className="text-muted">
+                        XSSDDS<DirectionsBus/>
+                    </h5>
+                    <CountUp start={0} end={100} delay={0} >
+                        {({ countUpRef }) => (
+                            <h6 ref={countUpRef}/>
+                        )}
+                    </CountUp>
+                </div>
+            </div>
+        </GreyContainer>
+        <WhiteContainerSmall>
+            <div className="col d-flex justify-content-center">
+                <div className="map-container">
+                    <Map route={route}/>
+                </div>
             </div>
         </WhiteContainerSmall>
     </>

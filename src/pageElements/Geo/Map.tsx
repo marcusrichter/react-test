@@ -45,13 +45,15 @@ const renderMap = (route: Route|null): ol.Map => {
         const routeLine = new LineString(route.coordinates.map(c => [c.lon, c.lat]));
         routeLine.transform('EPSG:4326', 'EPSG:3857');
 
+
         const routeLineFeature = new Feature({
             name: 'Line',
             geometry: routeLine,
-            style : new Style({
-                stroke: new Stroke({color: "#ff0000", width: 20})
-            })
         });
+
+        routeLineFeature.setStyle(new Style(
+            {stroke: new Stroke({color: '#00d1b2', width: 5})}
+            ));
 
         const routeLayer = new VectorLayer({
             source: new VectorSource({
