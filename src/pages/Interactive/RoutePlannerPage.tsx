@@ -9,12 +9,12 @@ import geocodeService from "../../services/geo/GeocodeService";
 import georouteService from "../../services/geo/GeorouteService";
 import GeoLocation from "../../entities/GeoLocation";
 import Route from "../../entities/Route";
-import TextCard from "../../pageElements/Cards/TextCard";
 import GreyContainer from "../../pageElements/Containers/GreyContainer";
-import DirectionsBus from "@material-ui/icons/DirectionsBus";
-import CountUp from "react-countup";
-
-let inited = false;
+import clsx from "clsx";
+import FactsItem from "../../pageElements/Facts/FactsItem";
+import {AccessTime, DirectionsCar, Streetview} from "@material-ui/icons";
+import Colors from "../../constants/Colors";
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 
 export default () => {
     const { register, handleSubmit, errors, control } = useForm();
@@ -28,15 +28,18 @@ export default () => {
             const geocodeTo = await geocodeService.geoCode(`Aachener Strasse Frechen`);
 
             const newRoute = await georouteService.findRoute(geocodeFrom as GeoLocation, geocodeTo as GeoLocation);
-            console.info(newRoute);
             setRoute(newRoute);
+
+            scroller.scrollTo('mapScrollToElement', {
+                duration: 1500,
+                delay: 100,
+                smooth: true,
+                offset: 50,
+            });
         }
 
-        if (!inited) {
-            init();
-            inited = true;
-        }
-    });
+        init();
+    }, []);
 
     const onSubmit = async(data: any) => {
         const dataRoutePlanner = data as IFormRoutePlanner;
@@ -55,6 +58,8 @@ export default () => {
             offset: 50,
         });
     };
+
+    let wayPointLength = 0;
 
     return <>
         <JumboTeaser backgroundImage="//picsum.photos/id/1067/1000/800">
@@ -129,7 +134,7 @@ export default () => {
                 </div>
             </div>
         </JumboTeaser>
-        <GreyContainer>
+        { route !== null && <GreyContainer>
             <Element name="mapScrollToElement"/>
             <div className="row">
                 <div className="mx-auto text-center">
@@ -137,44 +142,38 @@ export default () => {
                 </div>
             </div>
             <div className="row d-flex justify-content-center pt-5 pb-5">
-                <div className="mr-4 ml-4 facts-counter">
-                    <h5 data-aos="fade-left" className="text-muted">
-                        XSSDDS<DirectionsBus/>
-                    </h5>
-                    <CountUp start={0} end={100} delay={0} >
-                        {({ countUpRef }) => (
-                            <h6 ref={countUpRef}/>
-                        )}
-                    </CountUp>
-                </div>
-                <div className="mr-4 ml-4 facts-counter">
-                    <h5 data-aos="fade-left"  className="text-muted">
-                        XSSDDS<DirectionsBus/>
-                    </h5>
-                    <CountUp start={0} end={100} delay={0} >
-                        {({ countUpRef }) => (
-                            <h6 ref={countUpRef}/>
-                        )}
-                    </CountUp>
-                </div>
-                <div className="mr-4 ml-4 facts-counter">
-                    <h5 data-aos="fade-left" className="text-muted">
-                        XSSDDS<DirectionsBus/>
-                    </h5>
-                    <CountUp start={0} end={100} delay={0} >
-                        {({ countUpRef }) => (
-                            <h6 ref={countUpRef}/>
-                        )}
-                    </CountUp>
-                </div>
+                <FactsItem title="Entfernung (km)" value={Math.round(route.distance / 1000)} icon={<DirectionsCar/>} countDelay={2}/>
+                <FactsItem title="Dauer (Min.)" value={Math.round(route.duration / 6)} icon={<AccessTime/>} countDelay={2}/>
+                <FactsItem title="Wegpunkte" value={route.steps.length} icon={<Streetview/>} countDelay={0}/>
             </div>
-        </GreyContainer>
-        <WhiteContainerSmall>
+        </GreyContainer> }
+        <WhiteContainerSmall className={clsx(route === null && 'invisible')}>
             <div className="col d-flex justify-content-center">
                 <div className="map-container">
                     <Map route={route}/>
                 </div>
             </div>
+        </WhiteContainerSmall>
+        <WhiteContainerSmall>
+            <VerticalTimeline className="mt-5">
+            {route?.steps.map((step, index) => {
+                wayPointLength += step.distance;
+
+                return <VerticalTimelineElement
+                    key={index}
+                    className="vertical-timeline-element--work"
+                    date={(Math.round(100 * wayPointLength) / 100000) + 'km'}
+                    iconStyle={{ background: Colors.GREY_COLOR, color: '#fff' }}
+                    icon={<Streetview />}
+                >
+                    <h3 className="vertical-timeline-element-title">Wegpunkt {index + 1}</h3>
+                    <h4 className="vertical-timeline-element-subtitle">{Math.round(100 * step.duration / 60) / 100} Minuten</h4>
+                    <p>
+                        {step.instruction}
+                    </p>
+                </VerticalTimelineElement>}
+                )}
+            </VerticalTimeline>
         </WhiteContainerSmall>
     </>
 };
