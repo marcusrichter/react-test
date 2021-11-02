@@ -4,7 +4,7 @@ class GeoLocation {
 
     constructor(lon: number, lat: number) {
         this.lat = lat;
-        this.lon = lon;
+        this.lon = lon;        
     }
 
     toString(): string {
