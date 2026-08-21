@@ -5,7 +5,7 @@ import Button from '../../pageElements/Buttons/Button';
 import { Element, scroller } from 'react-scroll';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Phone from '@material-ui/icons/Phone';
+import Phone from '@mui/icons-material/Phone';
 import Colors from '../../constants/Colors';
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";

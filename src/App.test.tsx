@@ -1,9 +1,23 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { describe, expect, it, vi } from 'vitest';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// AOS startet einen MutationObserver, der nach Testende auf document zugreift.
+vi.mock('aos', () => ({
+  default: {
+    init: vi.fn(),
+    refresh: vi.fn(),
+  },
+}));
+
+describe('App', () => {
+  it('renders the app shell', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByText('Kontakt')).toBeInTheDocument();
+  });
 });

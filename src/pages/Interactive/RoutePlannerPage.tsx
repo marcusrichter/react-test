@@ -12,12 +12,12 @@ import Route from "../../entities/Route";
 import GreyContainer from "../../pageElements/Containers/GreyContainer";
 import clsx from "clsx";
 import FactsItem from "../../pageElements/Facts/FactsItem";
-import {AccessTime, DirectionsCar, Streetview} from "@material-ui/icons";
+import {AccessTime, DirectionsCar, Streetview} from "@mui/icons-material";
 import Colors from "../../constants/Colors";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 
 export default () => {
-    const { register, handleSubmit, errors, control } = useForm();
+    const { register, handleSubmit, formState: { errors }, control } = useForm();
 
     const [route, setRoute] = useState<Route|null>(null);
 
@@ -67,7 +67,7 @@ export default () => {
                 <div className="row">
                     <div className="col-md-8 offset-md-2 text-left pt-5 mt-5">
                         <div className="row row-mt-15em">
-                            <div className="col-md-7 mt-text pr-5 pt-5" data-aos="fade-down">
+                            <div className="col-md-7 mt-text pe-5 pt-5" data-aos="fade-down">
                                 <h1>Jetzt den kürzesten Weg finden oder eine Tour planen!</h1>
                             </div>
                             <div className="col-md-4 col-md-push-1" data-aos="fade-left">
@@ -80,31 +80,31 @@ export default () => {
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
                                                             <label htmlFor="route_fromStreet" className="required">Start Strasse</label>
-                                                            <input type="text" name="fromStreet" required className="form-control" data-validators="isRequired,isAlpha" ref={register}/>
+                                                            <input type="text" className="form-control" data-validators="isRequired,isAlpha" required {...register('fromStreet')}/>
                                                         </div>
                                                     </div>
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
                                                             <label htmlFor="route_fromCity" className="required">Start Stadt</label>
-                                                            <input type="text" name="fromCity" required className="form-control" data-validators="isRequired,isAlpha" ref={register}/>
+                                                            <input type="text" className="form-control" data-validators="isRequired,isAlpha" required {...register('fromCity')}/>
                                                         </div>
                                                     </div>
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
                                                             <label htmlFor="route_toStreet" className="required">Ziel Strasse</label>
-                                                            <input type="text" name="toStreet" required className="form-control" data-validators="isRequired,isAlpha" ref={register}/>
+                                                            <input type="text" className="form-control" data-validators="isRequired,isAlpha" required {...register('toStreet')}/>
                                                         </div>
                                                     </div>
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
                                                             <label htmlFor="route_toCity" className="required">Ziel Stadt</label>
-                                                            <input type="text" name="toCity" required className="form-control" data-validators="isRequired,isAlpha" ref={register}/>
+                                                            <input type="text" className="form-control" data-validators="isRequired,isAlpha" required {...register('toCity')}/>
                                                         </div>
                                                     </div>
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
                                                             <label htmlFor="route_goingBy" className="required">Unterwegs mit</label>
-                                                            <select name="goingBy" className="form-control" data-validators="isRequired,isAlpha" ref={register}>
+                                                            <select className="form-control" data-validators="isRequired,isAlpha" required {...register('goingBy')}>
                                                                 <option value="driving-car">Auto</option>
                                                                 <option value="driving-hgv">LKW</option>
                                                                 <option value="cycling-regular">Fahrrad</option>
@@ -120,7 +120,7 @@ export default () => {
 
                                                     <div className="row form-group">
                                                         <div className="col-md-12">
-                                                            <button className="btn btn-grey-filled btn-block mt-3">Route Finden</button>
+                                                            <button className="btn btn-grey-filled w-100 mt-3">Route Finden</button>
                                                         </div>
                                                     </div>
                                                 </form>

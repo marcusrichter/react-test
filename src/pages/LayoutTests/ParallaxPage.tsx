@@ -4,7 +4,7 @@ import JumboTeaser from '../../pageElements/Containers/JumboTeaser';
 import Button from '../../pageElements/Buttons/Button';
 import { Element, scroller } from 'react-scroll';
 import LightGreyContainer from '../../pageElements/Containers/LightGreyContainer';
-import Plx from 'react-plx';
+import Plx, { PlxItem } from 'react-plx';
 
 const scrollForMore = () => {
     scroller.scrollTo('moreScrollToElement', {
@@ -15,7 +15,7 @@ const scrollForMore = () => {
     });
 };
 
-const parallaxScale = [
+const parallaxScale: PlxItem[] = [
 {
     start: 0,
     end: 800,
@@ -29,7 +29,7 @@ const parallaxScale = [
     },
 ];
 
-const parallaxUnScaleAndGoTop = [
+const parallaxUnScaleAndGoTop: PlxItem[] = [
 {
     start: 0,
     end: 400,

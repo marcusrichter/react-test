@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import GreyContainer from './../../pageElements/Containers/GreyContainer';
-import { useForm } from 'react-hook-form';
-import { FormControl, FormControlLabel, FormGroup, FormLabel, InputLabel, MenuItem, Select, TextField, Checkbox, FormHelperText, RadioGroup, Radio } from '@material-ui/core';
+import { useForm, Controller } from 'react-hook-form';
+import { FormControl, FormControlLabel, FormGroup, FormLabel, InputLabel, MenuItem, Select, TextField, Checkbox, FormHelperText, RadioGroup, Radio } from '@mui/material';
 import Button from '../../pageElements/Buttons/Button';
 import WhiteContainerSmall from '../../pageElements/Containers/WhiteContainerSmall';
 import NumberingCard from './../../pageElements/Cards/NumberingCard';
@@ -11,7 +11,7 @@ import IFormEntry from '../../entities/IFormEntry';
 import { Element, scroller } from 'react-scroll';
 
 export default () => {
-    const { register, handleSubmit, errors, control } = useForm();
+    const { register, handleSubmit, formState: { errors }, control } = useForm();
 
     const [entries, setEntries] = useState<IFormEntry[]>(new Array<IFormEntry>());
 
@@ -41,11 +41,18 @@ export default () => {
                             <div className="contact-form-gender">
                                 <FormControl>
                                     <FormLabel component="legend">Gender</FormLabel>
-                                    <RadioGroup aria-label="Gender" name="gender">
-                                        <FormControlLabel value="female" control={<Radio />} label="Female" inputRef={register} />
-                                        <FormControlLabel value="male" control={<Radio />} label="Male" inputRef={register} />
-                                    </RadioGroup>
-                                </FormControl>
+                                    <Controller
+                                        name="gender"
+                                        control={control}
+                                        defaultValue=""
+                                        render={({ field }) => (
+                                            <RadioGroup aria-label="Gender" {...field}>
+                                                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                                                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                            </RadioGroup>
+                                        )}
+                                    />
+                                    </FormControl>
                             </div>
                             <div className="d-flex flex-column contact-form-address">
                                 <span className="font-weight-bold mb-2">Lorem Ipsum AG</span>
@@ -54,9 +61,9 @@ export default () => {
                                 <span>0221/500000</span>
                             </div>
                         </div>
-                        <TextField label="Vorname" type="text" name="firstname" data-validators="isRequired,isAlpha" fullWidth={true} inputRef={register}/>
-                        <TextField label="Nachname" type="text" name="lastname" data-validators="isRequired,isAlpha" fullWidth={true} inputRef={register}/>
-                        <TextField label="EMail" type="text" name="email" data-validators="isRequired,isAlpha" fullWidth={true} inputRef={register}/>
+                        <TextField label="Vorname" type="text" data-validators="isRequired,isAlpha" fullWidth={true} {...register('firstname')}/>
+                        <TextField label="Nachname" type="text" data-validators="isRequired,isAlpha" fullWidth={true} {...register('lastname')}/>
+                        <TextField label="EMail" type="text" data-validators="isRequired,isAlpha" fullWidth={true} {...register('email')}/>
                         <FormControl required fullWidth={true}>
                             <InputLabel>Alter</InputLabel>
                             <ReactHookFormSelect name="age" control={control}>

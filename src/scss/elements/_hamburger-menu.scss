@@ -11,6 +11,12 @@
     border: none;
     background: transparent !important;
     display: block !important;
+    margin-right: 15px;
+
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
 }
  
 .navbar-toggler .top-bar {

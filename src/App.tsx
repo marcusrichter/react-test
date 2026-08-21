@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/app.scss';
 import Header from './pageElements/Header';
 import SideNav from './pageElements/SideNav';
 import PageContext from "./contexts/PageContext";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import ShiftedCardsPage from './pages/LayoutTests/ShiftedCardsPage';
 import ParallaxPage from './pages/LayoutTests/ParallaxPage';
@@ -29,15 +28,15 @@ function App() {
   return <PageContext.Provider value={{sideMenuActivated, setSideMenuActivated}}> 
     <Header></Header>
     <SideNav></SideNav>
-    <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/layouts/shifted-cards" component={ShiftedCardsPage} exact />
-        <Route path="/layouts/parallax" component={ParallaxPage} exact />
-        <Route path="/layouts/scrolling-background-color-page" component={ScrollingBackgroundColorPage} exact />
-        <Route path="/layouts/timeline-page" component={TimelinePage} exact />
-        <Route path="/interactive/formular" component={FormularPage} exact />
-      <Route path="/interactive/route-planner" component={RoutePlannerPage} exact />
-    </Switch>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/layouts/shifted-cards" element={<ShiftedCardsPage />} />
+        <Route path="/layouts/parallax" element={<ParallaxPage />} />
+        <Route path="/layouts/scrolling-background-color-page" element={<ScrollingBackgroundColorPage />} />
+        <Route path="/layouts/timeline-page" element={<TimelinePage />} />
+        <Route path="/interactive/formular" element={<FormularPage />} />
+      <Route path="/interactive/route-planner" element={<RoutePlannerPage />} />
+    </Routes>
 
     <footer className="text-muted">
       <div className="container pt-4 pb-4">

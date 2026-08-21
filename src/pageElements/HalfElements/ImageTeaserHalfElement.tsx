@@ -8,7 +8,7 @@ export default (props: any) => {
     };
 
     return <div className="col-12 col-lg-6 d-flex image-teaser-half-element" style={styles}>
-        <div className="d-flex ml-5 mr-4 mt-4 flex-grow-0">
+        <div className="d-flex ms-5 me-4 mt-4 flex-grow-0">
             <span>Then</span>
         </div>
     </div>

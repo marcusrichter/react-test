@@ -1,7 +1,7 @@
 import React from 'react';
-import Phone from '@material-ui/icons/Phone';
-import Mail from '@material-ui/icons/Mail';
-import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp';
+import Phone from '@mui/icons-material/Phone';
+import Mail from '@mui/icons-material/Mail';
+import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
 import useScrollPosition from '@react-hook/window-scroll';
 import clsx from 'clsx';
 import { animateScroll } from 'react-scroll';

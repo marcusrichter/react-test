@@ -22,7 +22,7 @@ export default () => {
           <img src={logo}></img>
         </a>
         <div className="collapse navbar-collapse">
-          <ul className="navbar-nav ml-right d-none d-l-flex d-xl-flex">
+          <ul className="navbar-nav ms-3 d-none d-lg-flex">
             <li className="navbar-nav dropdown">
               <a href="#" className="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"
               onMouseEnter={() => setSubmenuActivated('menu1')}        
@@ -65,7 +65,7 @@ export default () => {
             </li>
           </ul>
 
-          <span className="navbar-nav ml-auto">
+          <span className="navbar-nav ms-auto">
             <HamburgerMenu></HamburgerMenu>
           </span>
         </div>
